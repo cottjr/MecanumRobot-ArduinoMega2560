@@ -1,4 +1,4 @@
- #include <PS2X_lib.h> 
+#include <PS2X_lib.h>
 //电机引脚
 #define PWMA 12    //A电机转速
 #define DIRA1 34 
@@ -14,10 +14,10 @@
 #define DIRD2 27  //D电机方向
 
 //PS2
-#define PS2_DAT        52  //14    
-#define PS2_CMD        51  //15
-#define PS2_SEL        53  //16
-#define PS2_CLK        50  //17
+#define PS2_DAT      52  //14    
+#define PS2_CMD      51  //15
+#define PS2_SEL      53  //16
+#define PS2_CLK      50  //17
 
 char speed;
 // #define pressures   true
@@ -188,7 +188,7 @@ void IO_init()
 }
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(250000);
   delay(300) ;//added delay to give wireless ps2 module some time to startup, before configuring it
   //CHANGES for v1.6 HERE!!! **************PAY ATTENTION*************
 
