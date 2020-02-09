@@ -173,7 +173,7 @@ void loop() {
     long sumPosition = motorLF->getEncoderPosition() + motorRF->getEncoderPosition() + motorLR->getEncoderPosition() + motorRR->getEncoderPosition();
     long deltaPosition = sumPosition - oldSumPosition;
     oldSumPosition = sumPosition;
-    Serial.print("∆pos: ");
+    Serial.print(" deta SumPos: ");// ( "∆pos: ");
     Serial.print(deltaPosition);
     long posVibrate = abs(deltaPosition);
     posVibrate = posVibrate > 255 ? 255 : 0;
@@ -201,7 +201,7 @@ void loop() {
       Serial.print( forward );
       Serial.print( " r:" );
       Serial.print( right );
-      Serial.print( " ∆°:" );
+      Serial.print( " ccwTurn: "); // ( " ∆°:" );
       Serial.print( ccwTurn );
       Serial.print( " LF:" );
       Serial.print( motorLF->getEncoderPosition() );
@@ -227,6 +227,7 @@ void loop() {
           motorLF->speed(0); motorRF->speed(0);
           motorLR->speed(0); motorRR->speed(0);
       }
+      Serial.println();
     }
   }
 }
